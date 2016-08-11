@@ -68,10 +68,9 @@ $(function() {
       });
     });
 
-    it('should change content when a new feed is loaded', function (done) {
+    it('should change content when a new feed is loaded', function () {
       var newContent = $('.entry').first().text();
       expect(oldContent).not.toBe(newContent);
-      done();
     });
 
   });
