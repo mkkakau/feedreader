@@ -64,9 +64,7 @@ $(function() {
         // Once completed load next feed
         // Set old content to first child in feed
         oldContent = $('.entry').first().text();
-        loadFeed(1, function() {
-          done();
-        });
+        loadFeed(1, done);
       });
     });
 
