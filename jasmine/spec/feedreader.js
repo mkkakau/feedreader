@@ -24,6 +24,10 @@ $(function() {
 
   describe('The menu', function () {
 
+    it('is hidden by default', function () {
+      expect($('body').hasClass('menu-hidden')).toBe(true);
+    });
+
   });
 
       /* TODO: Write a test that ensures the menu element is
