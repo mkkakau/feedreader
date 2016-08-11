@@ -53,7 +53,7 @@ $(function() {
     it('should have at least one .entry element within the .feed container', function (done) {
       var $entry = $('.entry');
       var $feed = $('.feed');
-      expect($feed.has($entry).length >= 1).toBe(true);
+      expect($feed.has($entry).length).not.toBe(true);
       done();
     });
   });
