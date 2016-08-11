@@ -70,7 +70,7 @@ $(function() {
 
     it('should change content when a new feed is loaded', function (done) {
       var newContent = $('.entry').first().text();
-      expect(oldContent !== newContent).toBe(true);
+      expect(oldContent).not.toBe(newContent);
       done();
     });
 
