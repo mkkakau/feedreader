@@ -11,6 +11,7 @@ $(function() {
      allFeeds.forEach(function (feed) {
        expect(feed.url).toBeDefined();
        expect(feed.url).not.toBe(0);
+       expect(feed.url).not.toEqual('');
      });
     });
 
