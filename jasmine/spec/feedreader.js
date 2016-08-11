@@ -10,15 +10,14 @@ $(function() {
     it('should have a URL defined and URL is not empty', function () {
      allFeeds.forEach(function (feed) {
        expect(feed.url).toBeDefined();
-       expect(feed.url).not.toBe(0);
-       expect(feed.url).not.toEqual('');
+       expect(feed.url.length).not.toBe(0);
      });
     });
 
     it('should have a name defined and name is not empty', function () {
       allFeeds.forEach(function (feed) {
         expect(feed.name).toBeDefined();
-        expect(feed.name).not.toBe(0);
+        expect(feed.name.length).not.toBe(0);
       });
     });
   });
