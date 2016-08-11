@@ -17,7 +17,7 @@ $(function() {
     it('should have a name defined and name is not empty', function () {
       allFeeds.forEach(function (feed) {
         expect(feed.name).toBeDefined();
-        expect(feed.name.length).toBeGretoBeGreaterThan(0);
+        expect(feed.name.length).toBeGreaterThan(0);
       });
     });
   });
