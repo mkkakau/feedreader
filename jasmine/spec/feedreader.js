@@ -7,14 +7,14 @@ $(function() {
       expect(allFeeds.length).not.toBe(0);
     });
 
-    it('have a URL defined and URL is not empty', function () {
+    it('should have a URL defined and URL is not empty', function () {
      allFeeds.forEach(function (feed) {
        expect(feed.url).toBeDefined();
        expect(feed.url).not.toBe(0);
      });
     });
 
-    it('have a name defined and name is not empty', function () {
+    it('should have a name defined and name is not empty', function () {
       allFeeds.forEach(function (feed) {
         expect(feed.name).toBeDefined();
         expect(feed.name).not.toBe(0);
@@ -50,7 +50,7 @@ $(function() {
       });
     });
 
-    it('have at least one .entry element within the .feed container', function (done) {
+    it('should have at least one .entry element within the .feed container', function (done) {
       var $entry = $('.entry');
       var $feed = $('.feed');
       expect($feed.has($entry).length >= 1).toBe(true);
@@ -59,12 +59,25 @@ $(function() {
   });
 
   describe('New Feed Selection', function () {
+    var oldContent;
+
+    beforeEach(function (done) {
+      // Load default feed
+      loadFeed(0, function () {
+        // Once completed load next feed
+        // Set old content to first child in feed
+        oldContent = $('.entry').first().text();
+        loadFeed(1, function() {
+          done();
+        });
+      });
+    });
+
+    it('should change content when a new feed is loaded', function (done) {
+      var newContent = $('.entry').first().text();
+      expect(oldContent !== newContent).toBe(true);
+      done();
+    });
 
   });
-  /* TODO: Write a new test suite named "New Feed Selection"
-
-      /* TODO: Write a test that ensures when a new feed is loaded
-       * by the loadFeed function that the content actually changes.
-       * Remember, loadFeed() is asynchronous.
-       */
 }());
